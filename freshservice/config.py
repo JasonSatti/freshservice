@@ -1,5 +1,5 @@
 """
-config - Config file to store variables for freshservice API.
+config - Config file to store credentials for freshservice API.
 """
 
 import os
