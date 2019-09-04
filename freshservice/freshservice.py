@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 """
-freshservice_update - Used to update due date of new-hire tickets and notate in
-ticket.
+freshservice - Used to update the due date of new-hire tickets to match
+the start date of the new hire and notate the previous due date in the ticket.
 """
 import requests
 import json
