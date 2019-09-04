@@ -35,7 +35,7 @@ Update due date for new hire ticket - Ticket ID: 6
 python3 freshservice.py
 INFO:root:Scrip run on: 2019-09-04 11:58:43.476274
 Got list of all new hire tickets.
-Ticket 6 already updated
-Ticket 5 already updated
-Ticket 4 already updated
+Ticket 6 already updated.
+Ticket 5 already updated.
+Ticket 4 already updated.
 ```
