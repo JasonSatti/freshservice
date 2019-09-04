@@ -1,10 +1,10 @@
 # Freshservice Ticket Update
 
-Freshservice is a Python script that is used to update the due date of new-hire tickets to match the start date of the new hire and notate in the previous due date in the ticket.
+freshservice.py is a Python script that is used to update the due date of new-hire tickets to match the start date of the new hire and notate in the previous due date in the ticket within the Freshservice ticketing system.
 
 ### Description
 
-Freshservice will run regularly to check all new-hire related tickets associated with the "Onboarding" group that have been updated in the last hour and it will update the due date of the ticket to be the start date of the new-hire as per the information provided by the HR team within the ticket. It will also add a public note containing the previous due date of the ticket. If the ticket has already been updated it will not update the ticket and report that the ticket has already been updated.
+freshservice.py will run regularly to check all new-hire related tickets associated with the "Onboarding" group that have been updated in the last hour and it will update the due date of the ticket to be the start date of the new-hire as per the information provided by the HR team within the ticket. It will also add a public note containing the previous due date of the ticket. If the ticket has already been updated it will not update the ticket and report that the ticket has already been updated.
 
 ### Installation
 
