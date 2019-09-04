@@ -19,3 +19,23 @@ pip install -r requirements.txt
 ```python
 python3 freshservice.py
 ```
+
+### Usage Example
+
+```python
+python3 freshservice.py
+INFO:root:Scrip run on: 2019-09-04 11:58:56.983343
+Got list of all new hire tickets.
+Added note on ticket - Ticket ID: 6
+Added note on ticket - Ticket ID: 5
+Ticket 4 already updated
+Update due date for new hire ticket - Ticket ID: 5
+Update due date for new hire ticket - Ticket ID: 6
+
+python3 freshservice.py
+INFO:root:Scrip run on: 2019-09-04 11:58:43.476274
+Got list of all new hire tickets.
+Ticket 6 already updated
+Ticket 5 already updated
+Ticket 4 already updated
+```
