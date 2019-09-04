@@ -90,7 +90,7 @@ def get_newhire_tickets(group_id):
                 start_date = get_start_date(ticket["id"])
                 # Check to see if ticket due date was already updated
                 if start_date == ticket["due_by"][0:10]:
-                    print(f'Ticket {ticket["id"]} already updated')
+                    print(f'Ticket {ticket["id"]} already updated.')
                 else:
                     ticket_ids.add(ticket["id"])
                     add_ticket_note(ticket["id"], ticket["due_by"][0:10])
