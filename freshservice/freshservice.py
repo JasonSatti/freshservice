@@ -83,12 +83,17 @@ def get_newhire_tickets(group_id):
 
     for ticket in tickets:
         update_time = datetime.strptime(ticket["updated_at"], "%Y-%m-%dT%H:%M:%SZ")
+        # Check for tickets modified in the last hour
         if update_time > last_hour:
+            # Verify the subject and group are related to New Hire Onboarding
             if "New Hire" in ticket["subject"] and ticket["group_id"] == group_id:
-                ticket_ids.add(ticket["id"])
-                add_ticket_note(ticket["id"], ticket["due_by"][0:10])
-    if not ticket_ids:
-        print("No new hire tickets updated in the last hour.")
+                start_date = get_start_date(ticket["id"])
+                # Check to see if ticket due date was already updated
+                if start_date == ticket["due_by"][0:10]:
+                    print(f'Ticket {ticket["id"]} already updated')
+                else:
+                    ticket_ids.add(ticket["id"])
+                    add_ticket_note(ticket["id"], ticket["due_by"][0:10])
 
     return ticket_ids
 
@@ -102,11 +107,12 @@ def get_start_date(ticket_id):
     url = f"{BASE_URL}/api/v2/tickets/{ticket_id}/requested_items.json"
     headers = {"AUTHorization": f"Basic {AUTH}"}
     ticket_info = requests.get(url, headers=headers)
-    if ticket_info.ok:
-        print(f"Got start date for new hire - Ticket ID: {ticket_id}")
-    else:
+    if not ticket_info.ok:
         logging.debug(f"Error - {ticket_info.status_code} - {ticket_info.content}")
-    custom_fields = ticket_info.json()[0]["custom_fields"]
+    else:
+        # print(f"Got start date for new hire - Ticket ID: {ticket_id}")
+        # Disabled in prod; leave this for debugging purposes
+        custom_fields = ticket_info.json()[0]["custom_fields"]
 
     for field in custom_fields:
         if field["label"] == "Start Date":
