@@ -22,7 +22,7 @@ python3 freshservice.py
 
 ### Usage Example
 
-```python
+```
 python3 freshservice.py
 INFO:root:Scrip run on: 2019-09-04 11:58:56.983343
 Got list of all new hire tickets.
