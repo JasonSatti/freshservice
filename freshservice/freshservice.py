@@ -17,7 +17,7 @@ def setup_logger():
     logging.basicConfig(level=logging.DEBUG)
     logging.getLogger("requests").setLevel(logging.WARNING)
     logging.getLogger("urllib3").setLevel(logging.WARNING)
-    logging.info(f"Scrip run on: {now}")
+    logging.info(f"Script run on: {now}")
 
 
 def get_group_id():
